@@ -30,7 +30,7 @@ jobs:
           SECURELINE_GITHUB_REPO_URL=https://github.com/odevm/secure-line-app
           SECURELINE_GITHUB_OWNER=odevm
           SECURELINE_GITHUB_REPO=secure-line-app
-          SECURELINE_TELEGRAM_CHANNEL_URL=
+          SECURELINE_TELEGRAM_CHANNEL_URL=https://t.me/secureline_app
           SECURELINE_FIREBASE_ENABLED=false
           EOF
           # Strip leading spaces from heredoc indentation
@@ -105,7 +105,7 @@ jobs:
           SECURELINE_GITHUB_REPO_URL=https://github.com/odevm/secure-line-app
           SECURELINE_GITHUB_OWNER=odevm
           SECURELINE_GITHUB_REPO=secure-line-app
-          SECURELINE_TELEGRAM_CHANNEL_URL=
+          SECURELINE_TELEGRAM_CHANNEL_URL=https://t.me/secureline_app
           SECURELINE_FIREBASE_ENABLED=false
           EOF
           sed -i 's/^[[:space:]]*//' local.properties

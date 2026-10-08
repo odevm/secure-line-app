@@ -21,6 +21,7 @@ import org.secureline.app.ui.i18n.AppLocale
 import org.secureline.app.ui.sas.SasScreen
 import org.secureline.app.ui.settings.SettingsScreen
 import org.secureline.app.ui.sms.SmsChatScreen
+import org.secureline.app.ui.support.SupportContactScreen
 import org.secureline.app.ui.unlock.UnlockScreen
 
 @Composable
@@ -126,7 +127,7 @@ fun SecureLineNavHost(
             StubScreen(title = "Backup & restore", routeTag = Routes.BACKUP)
         }
         composable(Routes.SUPPORT_CONTACT) {
-            StubScreen(title = "Contact", routeTag = Routes.SUPPORT_CONTACT)
+            SupportContactScreen()
         }
         composable(Routes.UPDATE_RESULT) {
             StubScreen(title = "Update result", routeTag = Routes.UPDATE_RESULT)

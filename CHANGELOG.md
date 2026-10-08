@@ -23,7 +23,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Public GitHub Contact defaults to `odevm/secure-line-app`; Telegram left blank until provided
+- Public GitHub Contact defaults to `odevm/secure-line-app`
+- Telegram Contact set to [t.me/secureline_app](https://t.me/secureline_app)
 
 ## [0.1.0] - 2026-10-09
 

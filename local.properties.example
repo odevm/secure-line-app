@@ -5,7 +5,6 @@
 SECURELINE_GITHUB_REPO_URL=https://github.com/odevm/secure-line-app
 SECURELINE_GITHUB_OWNER=odevm
 SECURELINE_GITHUB_REPO=secure-line-app
-# Leave blank until Telegram channel exists
-SECURELINE_TELEGRAM_CHANNEL_URL=
+SECURELINE_TELEGRAM_CHANNEL_URL=https://t.me/secureline_app
 # true only when app/google-services.json is present locally
 SECURELINE_FIREBASE_ENABLED=true
