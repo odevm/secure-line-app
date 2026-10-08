@@ -17,6 +17,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Navigation stubs for all primary screens (instrumented route smoke)
 - EN/AR strings, RTL-aware locale override, and `docs/I18N.md`
 - `AppConfig` / BuildConfig wiring for `SECURELINE_*` public URLs (`docs/CONFIG.md`)
+- `secureline://pair` URI parse/generate with lid validation (reject PSK)
+- Local identity (UUID + X25519/Ed25519) and AES-256-GCM with nonce-reuse rejection
 
 ## [0.1.0] - 2026-10-09
 

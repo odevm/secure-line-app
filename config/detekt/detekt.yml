@@ -15,6 +15,11 @@ style:
     active: true
   MaxLineLength:
     maxLineLength: 120
+  ReturnCount:
+    max: 8
+    excludedFunctions:
+      - 'equals'
+      - 'parse'
 
 naming:
   FunctionNaming:
