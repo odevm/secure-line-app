@@ -1,0 +1,74 @@
+# Built application files
+*.apk
+*.aar
+*.ap_
+*.aab
+*.dex
+*.class
+
+# Generated files
+bin/
+gen/
+out/
+release/
+
+# Gradle
+.gradle/
+build/
+**/build/
+
+# Local configuration
+local.properties
+*.keystore
+*.jks
+keystore.properties
+.env
+.env.*
+
+# Firebase — never commit real client config (CI injects via secret)
+app/google-services.json
+google-services.json
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+.navigation/
+captures/
+.externalNativeBuild/
+.cxx/
+*.hprof
+*.xcworkspace
+
+# NDK
+obj/
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+
+# Logs / coverage / lint
+*.log
+*.ap_
+lint/reports/
+**/lint-results*
+coverage/
+*.exec
+.kotlin/
+
+# Test outputs
+test-results/
+**/jacoco/
+
+# Cursor / editor local
+.cursor/
+*.swp
+*~
+
+# Packaging
+*.orig
+*.rej
