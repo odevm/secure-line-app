@@ -5,6 +5,7 @@ add_library(secureline_modem SHARED
     src/modem.c
     src/fec.c
     src/fsk.c
+    src/codec2_stub.c
     src/jni_bridge.c
 )
 

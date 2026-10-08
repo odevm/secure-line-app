@@ -9,26 +9,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Repository foundation: `.gitignore`, Apache-2.0 license, OSS metafiles
-- Android application shell (`org.secureline.app`) with Compose + Hilt
-- Conventional Commits guide
-- JUnit 5 / MockK / Truth test harness and `docs/TESTING.md`
-- Detekt, ktlint, and GitHub Actions CI (lint + unit tests)
-- Navigation stubs for all primary screens (instrumented route smoke)
-- EN/AR strings, RTL-aware locale override, and `docs/I18N.md`
-- `AppConfig` / BuildConfig wiring for `SECURELINE_*` public URLs (`docs/CONFIG.md`)
-- `secureline://pair` URI parse/generate with lid validation (reject PSK)
-- Local identity (UUID + X25519/Ed25519) and AES-256-GCM with nonce-reuse rejection
-- NDK 4-FSK modem + Hamming(7,4) FEC spike with host bit-exact round-trip tests
-- TOFU handshake frame codec (`SLH1`) and ContactBook multi-number merge
-- SAS derive (4 emoji + 2×4 digits) and retention PERSISTENT/TIMED/EPHEMERAL rules
-- PIN vault wrap/unwrap for SecureDb key + Unlock screen stub
-- SemVer update-tag compare helper and encrypted SMS `SL1:` framer
-- Drive backup envelope, FCM payload denylist, secure-session state machine
-- SAS Matches/Abort UI and draft PROTOCOL/API/THREAT/RETENTION docs
+- Optional Google account linking (Drive-gated) + FCM-ready without Google
+- Analytics/Crashlytics consent gate and telemetry denylist scrubber
+- SMS chat UI with number picker and fingerprint-mismatch send block
+- Codec2 JNI glue (frame-compatible stub) + host length/energy smoke
+- PTT secure pipeline orchestration (Codec2 → AES-GCM → modem)
+- Device audio profile JSON load/save (`profiles/default.json`)
+- Optional root audio gate with non-root fallback
+- Firebase project wiring (`secureline-odevm`) via local `google-services.json` + CI secrets
+- Release signing via local PKCS12 + GitHub Secrets (`docs/SECRETS.md`)
+- Dual-device cellular checklist in `docs/TESTING.md` (sign-off pending manual lab)
+- Docs: `SECRETS`, `ROOT`, expanded `TESTING` / `CONFIG`
+
+### Changed
+
+- Public GitHub Contact defaults to `odevm/secure-line-app`; Telegram left blank until provided
 
 ## [0.1.0] - 2026-10-09
 
 ### Added
 
-- Initial public project skeleton at SemVer `0.1.0`
+- Initial public project skeleton at SemVer `0.1.0` (app module, OSS meta, CI harness)

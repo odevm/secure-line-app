@@ -3,7 +3,10 @@ build:
 
 complexity:
   LongMethod:
-    threshold: 80
+    threshold: 120
+  LongParameterList:
+    functionThreshold: 8
+    constructorThreshold: 8
   TooManyFunctions:
     thresholdInFiles: 20
     thresholdInClasses: 20

@@ -12,4 +12,11 @@ cc -std=c11 -Wall -Wextra -O2 \
   "$ROOT/native/tests/modem_roundtrip_test.c" \
   -o "$BUILD/modem_roundtrip_test"
 "$BUILD/modem_roundtrip_test"
-echo "Host modem tests OK"
+
+cc -std=c11 -Wall -Wextra -O2 \
+  -I"$ROOT/native/modem/include" \
+  "$ROOT/native/modem/src/codec2_stub.c" \
+  "$ROOT/native/tests/codec2_smoke_test.c" \
+  -o "$BUILD/codec2_smoke_test"
+"$BUILD/codec2_smoke_test"
+echo "Host modem + codec2 smoke tests OK"

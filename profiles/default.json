@@ -1,0 +1,7 @@
+{
+  "deviceModel": "default",
+  "sampleRateHz": 8000,
+  "modemGain": 1.0,
+  "preferSpeakerphone": true,
+  "disableAec": true
+}

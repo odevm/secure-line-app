@@ -4,6 +4,8 @@ Open-source Android app for **end-to-end encrypted cellular voice** (PTT over th
 
 **Status:** early development (SemVer `0.1.0`). Sideload only — not distributed on Google Play.
 
+**Repo:** [odevm/secure-line-app](https://github.com/odevm/secure-line-app)
+
 ## Features (planned / in progress)
 
 - Offline-first identity (`localUserId` + SecureLine keypair)
@@ -30,7 +32,8 @@ export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
 ./gradlew :app:assembleDebug
 ```
 
-Release builds that enable Firebase expect `GOOGLE_SERVICES_JSON` / `GOOGLE_SERVICES_JSON_BASE64` in CI (never commit `app/google-services.json`).
+Local Firebase: place `app/google-services.json` (gitignored) and set `SECURELINE_FIREBASE_ENABLED=true` in `local.properties`.  
+CI/release secrets: see [docs/SECRETS.md](docs/SECRETS.md). Signing keystore lives under `secrets/` (gitignored) with `secrets/SIGNING_NOTES.txt`.
 
 ## Versioning
 

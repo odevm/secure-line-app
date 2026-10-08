@@ -21,9 +21,13 @@ build/
 local.properties
 *.keystore
 *.jks
+*.p12
 keystore.properties
 .env
 .env.*
+
+# Local secrets (signing notes, keystores, firebase copies)
+secrets/
 
 # Firebase — never commit real client config (CI injects via secret)
 app/google-services.json
@@ -44,6 +48,8 @@ captures/
 # NDK
 obj/
 native/tests/build/
+# Large upstream tree — clone via scripts/fetch_codec2.sh (optional real Codec2)
+native/third_party/codec2/
 
 # OS
 .DS_Store

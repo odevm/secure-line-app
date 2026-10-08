@@ -17,4 +17,22 @@
     <string name="sas_instructions">قارن هذه الأيقونات والأرقام مع الطرف الآخر. إذا تطابقت فالمكالمة آمنة. إذا اختلفت فقد يكون هناك اعتراض — أغلق المكالمة.</string>
     <string name="sas_matches">متطابق — متابعة</string>
     <string name="sas_mismatch">غير متطابق — إلغاء</string>
+    <string name="sms_title">رسائل آمنة</string>
+    <string name="sms_pick_number">اختر الرقم</string>
+    <string name="sms_blocked_mismatch">الإرسال محظور: بصمة المفتاح غير متطابقة. أعد الربط عبر QR.</string>
+    <string name="sms_send">إرسال مشفّر</string>
+    <string name="sms_composer">رسالة</string>
+    <string name="secure_call_title">مكالمة آمنة</string>
+    <string name="secure_call_state">الحالة: %1$s</string>
+    <string name="ptt_press">اضغط للتحدث</string>
+    <string name="ptt_release">إفلات</string>
+    <string name="account_title">الحساب</string>
+    <string name="account_local_id">المعرّف المحلي: %1$s</string>
+    <string name="account_google_optional">Google اختياري — مطلوب فقط لنسخ Drive الاحتياطي.</string>
+    <string name="account_google_linked">مرتبط: %1$s</string>
+    <string name="account_drive_on">نسخ Drive مفعّل</string>
+    <string name="account_drive_off">نسخ Drive معطّل</string>
+    <string name="account_skip_google">تخطّي Google الآن</string>
+    <string name="account_link_google">ربط Google</string>
+    <string name="account_signout_google">تسجيل الخروج من Google</string>
 </resources>

@@ -1,11 +1,11 @@
-## Copy to local.properties (gitignored) and fill as needed.
-## sdk.dir is usually auto-written by Android Studio.
+## Copy to local.properties (gitignored).
 
 # sdk.dir=/path/to/Android/sdk
 
-# Optional SecureLine public URLs (also injectable via env / CI)
-# SECURELINE_GITHUB_REPO_URL=https://github.com/org/secureline
-# SECURELINE_GITHUB_OWNER=org
-# SECURELINE_GITHUB_REPO=secureline
-# SECURELINE_TELEGRAM_CHANNEL_URL=https://t.me/secureline
-# SECURELINE_FIREBASE_ENABLED=false
+SECURELINE_GITHUB_REPO_URL=https://github.com/odevm/secure-line-app
+SECURELINE_GITHUB_OWNER=odevm
+SECURELINE_GITHUB_REPO=secure-line-app
+# Leave blank until Telegram channel exists
+SECURELINE_TELEGRAM_CHANNEL_URL=
+# true only when app/google-services.json is present locally
+SECURELINE_FIREBASE_ENABLED=true

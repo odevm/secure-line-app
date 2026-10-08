@@ -21,6 +21,11 @@ fun secureLineProp(name: String): String {
     return local.getProperty(name, "") ?: ""
 }
 
+val googleServicesFile = file("google-services.json")
+val firebaseEnabledProp =
+    secureLineProp("SECURELINE_FIREBASE_ENABLED").equals("true", ignoreCase = true)
+val applyFirebasePlugins = firebaseEnabledProp && googleServicesFile.exists()
+
 android {
     namespace = "org.secureline.app"
     compileSdk = 35
@@ -37,8 +42,7 @@ android {
         val githubOwner = secureLineProp("SECURELINE_GITHUB_OWNER")
         val githubRepo = secureLineProp("SECURELINE_GITHUB_REPO")
         val telegramUrl = secureLineProp("SECURELINE_TELEGRAM_CHANNEL_URL")
-        val firebaseEnabled =
-            secureLineProp("SECURELINE_FIREBASE_ENABLED").equals("true", ignoreCase = true)
+        val firebaseEnabled = applyFirebasePlugins
 
         buildConfigField("String", "GITHUB_REPO_URL", "\"${githubRepoUrl.replace("\"", "\\\"")}\"")
         buildConfigField("String", "GITHUB_OWNER", "\"${githubOwner.replace("\"", "\\\"")}\"")
@@ -51,6 +55,23 @@ android {
         buildConfigField("boolean", "FIREBASE_ENABLED", firebaseEnabled.toString())
     }
 
+    val keystorePropsFile = rootProject.file("keystore.properties")
+    val keystoreProps = Properties()
+    if (keystorePropsFile.exists()) {
+        keystorePropsFile.inputStream().use { keystoreProps.load(it) }
+    }
+
+    signingConfigs {
+        if (keystorePropsFile.exists()) {
+            create("release") {
+                storeFile = rootProject.file(keystoreProps["storeFile"] as String)
+                storePassword = keystoreProps["storePassword"] as String
+                keyAlias = keystoreProps["keyAlias"] as String
+                keyPassword = keystoreProps["keyPassword"] as String
+            }
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -58,6 +79,9 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro",
             )
+            if (keystorePropsFile.exists()) {
+                signingConfig = signingConfigs.getByName("release")
+            }
         }
     }
 
@@ -134,10 +158,20 @@ dependencies {
     implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
     implementation("com.google.crypto.tink:tink-android:1.15.0")
 
+    if (applyFirebasePlugins) {
+        implementation(platform("com.google.firebase:firebase-bom:33.5.1"))
+        implementation("com.google.firebase:firebase-auth")
+        implementation("com.google.firebase:firebase-messaging")
+        implementation("com.google.firebase:firebase-analytics")
+        implementation("com.google.firebase:firebase-crashlytics")
+        implementation("com.google.android.gms:play-services-auth:21.2.0")
+    }
+
     testImplementation("org.junit.jupiter:junit-jupiter:5.11.3")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     testImplementation("io.mockk:mockk:1.13.13")
     testImplementation("com.google.truth:truth:1.4.4")
+    testImplementation("org.json:json:20240303")
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
@@ -145,4 +179,9 @@ dependencies {
     kspAndroidTest("com.google.dagger:hilt-compiler:2.52")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+}
+
+if (applyFirebasePlugins) {
+    apply(plugin = "com.google.gms.google-services")
+    apply(plugin = "com.google.firebase.crashlytics")
 }
