@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -6,6 +8,17 @@ plugins {
     id("com.google.devtools.ksp")
     id("io.gitlab.arturbosch.detekt")
     id("org.jlleitschuh.gradle.ktlint")
+}
+
+fun secureLineProp(name: String): String {
+    val fromEnv = System.getenv(name)
+    if (!fromEnv.isNullOrBlank()) return fromEnv
+    val local = Properties()
+    val file = rootProject.file("local.properties")
+    if (file.exists()) {
+        file.inputStream().use { local.load(it) }
+    }
+    return local.getProperty(name, "") ?: ""
 }
 
 android {
@@ -19,6 +32,23 @@ android {
         versionCode = 1
         versionName = "0.1.0"
         testInstrumentationRunner = "org.secureline.app.HiltTestRunner"
+
+        val githubRepoUrl = secureLineProp("SECURELINE_GITHUB_REPO_URL")
+        val githubOwner = secureLineProp("SECURELINE_GITHUB_OWNER")
+        val githubRepo = secureLineProp("SECURELINE_GITHUB_REPO")
+        val telegramUrl = secureLineProp("SECURELINE_TELEGRAM_CHANNEL_URL")
+        val firebaseEnabled =
+            secureLineProp("SECURELINE_FIREBASE_ENABLED").equals("true", ignoreCase = true)
+
+        buildConfigField("String", "GITHUB_REPO_URL", "\"${githubRepoUrl.replace("\"", "\\\"")}\"")
+        buildConfigField("String", "GITHUB_OWNER", "\"${githubOwner.replace("\"", "\\\"")}\"")
+        buildConfigField("String", "GITHUB_REPO", "\"${githubRepo.replace("\"", "\\\"")}\"")
+        buildConfigField(
+            "String",
+            "TELEGRAM_CHANNEL_URL",
+            "\"${telegramUrl.replace("\"", "\\\"")}\"",
+        )
+        buildConfigField("boolean", "FIREBASE_ENABLED", firebaseEnabled.toString())
     }
 
     buildTypes {
