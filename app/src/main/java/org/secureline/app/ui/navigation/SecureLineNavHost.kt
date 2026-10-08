@@ -5,9 +5,11 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import org.secureline.app.domain.sas.SasVerifier
 import org.secureline.app.ui.common.StubScreen
 import org.secureline.app.ui.home.HomeScreen
 import org.secureline.app.ui.i18n.AppLocale
+import org.secureline.app.ui.sas.SasScreen
 import org.secureline.app.ui.settings.SettingsScreen
 import org.secureline.app.ui.unlock.UnlockScreen
 
@@ -44,7 +46,11 @@ fun SecureLineNavHost(
             StubScreen(title = "Cellular call", routeTag = Routes.CELLULAR_CALL)
         }
         composable(Routes.SAS) {
-            StubScreen(title = "SAS compare", routeTag = Routes.SAS)
+            SasScreen(
+                material = SasVerifier.derive(ByteArray(32) { 0 }),
+                onMatches = {},
+                onMismatch = {},
+            )
         }
         composable(Routes.SECURE_CALL) {
             StubScreen(title = "Secure Call", routeTag = Routes.SECURE_CALL)

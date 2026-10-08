@@ -13,4 +13,8 @@
     <string name="unlock_pin_label">PIN</string>
     <string name="unlock_submit">Unlock</string>
     <string name="unlock_error_wrong">Wrong PIN</string>
+    <string name="sas_title">Safety check</string>
+    <string name="sas_instructions">Compare these icons and numbers with the other person. If they match, this call is secure. If they differ, someone may be intercepting — hang up.</string>
+    <string name="sas_matches">Matches — continue</string>
+    <string name="sas_mismatch">Does not match — abort</string>
 </resources>

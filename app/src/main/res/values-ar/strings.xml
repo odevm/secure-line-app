@@ -13,4 +13,8 @@
     <string name="unlock_pin_label">رمز PIN</string>
     <string name="unlock_submit">فتح</string>
     <string name="unlock_error_wrong">رمز PIN غير صحيح</string>
+    <string name="sas_title">تحقق الأمان</string>
+    <string name="sas_instructions">قارن هذه الأيقونات والأرقام مع الطرف الآخر. إذا تطابقت فالمكالمة آمنة. إذا اختلفت فقد يكون هناك اعتراض — أغلق المكالمة.</string>
+    <string name="sas_matches">متطابق — متابعة</string>
+    <string name="sas_mismatch">غير متطابق — إلغاء</string>
 </resources>
