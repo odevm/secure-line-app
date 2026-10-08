@@ -20,6 +20,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `secureline://pair` URI parse/generate with lid validation (reject PSK)
 - Local identity (UUID + X25519/Ed25519) and AES-256-GCM with nonce-reuse rejection
 - NDK 4-FSK modem + Hamming(7,4) FEC spike with host bit-exact round-trip tests
+- TOFU handshake frame codec (`SLH1`) and ContactBook multi-number merge
+- SAS derive (4 emoji + 2×4 digits) and retention PERSISTENT/TIMED/EPHEMERAL rules
 
 ## [0.1.0] - 2026-10-09
 
