@@ -32,5 +32,8 @@ jobs:
       - name: detekt
         run: ./gradlew :app:detekt --no-daemon
 
+      - name: Host modem round-trip
+        run: bash native/tests/run_host_modem_tests.sh
+
       - name: Unit tests
         run: ./gradlew :app:testDebugUnitTest --no-daemon

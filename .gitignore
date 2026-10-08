@@ -43,6 +43,7 @@ captures/
 
 # NDK
 obj/
+native/tests/build/
 
 # OS
 .DS_Store

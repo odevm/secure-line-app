@@ -10,6 +10,7 @@ export ANDROID_HOME="$HOME/Library/Android/sdk"
 
 ./gradlew testDebugUnitTest
 ./gradlew detekt ktlintCheck
+bash native/tests/run_host_modem_tests.sh
 # Device or emulator required:
 ./gradlew connectedDebugAndroidTest
 ```

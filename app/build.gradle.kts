@@ -75,6 +75,14 @@ android {
         buildConfig = true
     }
 
+    externalNativeBuild {
+        cmake {
+            path = file("../native/modem/CMakeLists.txt")
+        }
+    }
+
+    ndkVersion = "28.2.13676358"
+
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
