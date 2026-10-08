@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - TOFU handshake frame codec (`SLH1`) and ContactBook multi-number merge
 - SAS derive (4 emoji + 2×4 digits) and retention PERSISTENT/TIMED/EPHEMERAL rules
 - PIN vault wrap/unwrap for SecureDb key + Unlock screen stub
+- SemVer update-tag compare helper and encrypted SMS `SL1:` framer
 
 ## [0.1.0] - 2026-10-09
 

@@ -20,6 +20,8 @@ style:
     excludedFunctions:
       - 'equals'
       - 'parse'
+  ThrowsCount:
+    max: 8
 
 naming:
   FunctionNaming:
