@@ -7,11 +7,15 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import org.secureline.app.ui.common.StubScreen
 import org.secureline.app.ui.home.HomeScreen
+import org.secureline.app.ui.i18n.AppLocale
+import org.secureline.app.ui.settings.SettingsScreen
 
 @Composable
 fun SecureLineNavHost(
     navController: NavHostController = rememberNavController(),
     startDestination: String = Routes.HOME,
+    appLocale: AppLocale = AppLocale.SYSTEM,
+    onLocaleSelected: (AppLocale) -> Unit = {},
 ) {
     NavHost(
         navController = navController,
@@ -48,7 +52,10 @@ fun SecureLineNavHost(
             StubScreen(title = "Calibration", routeTag = Routes.CALIBRATION)
         }
         composable(Routes.SETTINGS) {
-            StubScreen(title = "Settings", routeTag = Routes.SETTINGS)
+            SettingsScreen(
+                currentLocale = appLocale,
+                onLocaleSelected = onLocaleSelected,
+            )
         }
         composable(Routes.ACCOUNT) {
             StubScreen(title = "Account", routeTag = Routes.ACCOUNT)

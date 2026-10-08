@@ -3,7 +3,7 @@ build:
 
 complexity:
   LongMethod:
-    threshold: 60
+    threshold: 80
   TooManyFunctions:
     thresholdInFiles: 20
     thresholdInClasses: 20

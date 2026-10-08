@@ -15,6 +15,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - JUnit 5 / MockK / Truth test harness and `docs/TESTING.md`
 - Detekt, ktlint, and GitHub Actions CI (lint + unit tests)
 - Navigation stubs for all primary screens (instrumented route smoke)
+- EN/AR strings, RTL-aware locale override, and `docs/I18N.md`
+- `AppConfig` / BuildConfig wiring for `SECURELINE_*` public URLs (`docs/CONFIG.md`)
 
 ## [0.1.0] - 2026-10-09
 
