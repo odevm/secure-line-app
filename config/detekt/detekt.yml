@@ -1,0 +1,22 @@
+build:
+  maxIssues: 0
+
+complexity:
+  LongMethod:
+    threshold: 60
+  TooManyFunctions:
+    thresholdInFiles: 20
+    thresholdInClasses: 20
+
+style:
+  MagicNumber:
+    active: false
+  WildcardImport:
+    active: true
+  MaxLineLength:
+    maxLineLength: 120
+
+naming:
+  FunctionNaming:
+    ignoreAnnotated:
+      - 'Composable'

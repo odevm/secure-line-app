@@ -1,7 +1,7 @@
 package org.secureline.app
 
 import com.google.common.truth.Truth.assertThat
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 class VersionSmokeTest {
     @Test
