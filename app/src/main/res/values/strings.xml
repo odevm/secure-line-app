@@ -9,4 +9,8 @@
     <string name="not_configured">Not configured in this build</string>
     <string name="contact_github">GitHub repository</string>
     <string name="contact_telegram">Telegram channel</string>
+    <string name="unlock_title">Unlock SecureLine</string>
+    <string name="unlock_pin_label">PIN</string>
+    <string name="unlock_submit">Unlock</string>
+    <string name="unlock_error_wrong">Wrong PIN</string>
 </resources>

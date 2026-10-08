@@ -9,6 +9,7 @@ import org.secureline.app.ui.common.StubScreen
 import org.secureline.app.ui.home.HomeScreen
 import org.secureline.app.ui.i18n.AppLocale
 import org.secureline.app.ui.settings.SettingsScreen
+import org.secureline.app.ui.unlock.UnlockScreen
 
 @Composable
 fun SecureLineNavHost(
@@ -25,7 +26,10 @@ fun SecureLineNavHost(
             StubScreen(title = "Onboarding", routeTag = Routes.ONBOARDING)
         }
         composable(Routes.UNLOCK) {
-            StubScreen(title = "Unlock", routeTag = Routes.UNLOCK)
+            UnlockScreen(
+                errorMessage = null,
+                onUnlock = {},
+            )
         }
         composable(Routes.HOME) {
             HomeScreen()
